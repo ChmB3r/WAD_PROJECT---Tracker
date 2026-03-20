@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\MangaController;
 
 Route::get('/', function () {
-    return redirect()->route('students.index');
+    return redirect()->route('mangas.index');
 });
 
-Route::resource('students', StudentController::class);
+Route::resource('mangas', MangaController::class);
