@@ -16,7 +16,6 @@ class MangaController extends Controller
             $query->where('status', $status);
         }
         
-        // Group by status for a structured view
         $mangas = $query->latest()->get()->groupBy('status');
         $allMangasCount = Manga::count();
         
@@ -39,7 +38,6 @@ class MangaController extends Controller
             'url' => 'nullable|string',
         ]);
 
-        // Check if manga already exists in tracker based on mal_id
         if ($validated['mal_id'] && Manga::where('mal_id', $validated['mal_id'])->exists()) {
             return redirect()->back()->with('error', 'This manga is already in your tracker!');
         }
@@ -63,7 +61,6 @@ class MangaController extends Controller
     {
         $validated = $request->validate([
             'status' => 'required|in:Plan to read,Reading,On-hold,Completed,Dropped',
-            // optionally allow changing other things, but usually just status is changed in a tracker
         ]);
 
         $manga->update($validated);

@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
                 $mangas = $response->json()['data'];
                 $statuses = ['Plan to read', 'Reading', 'On-hold', 'Completed', 'Dropped'];
                 
-                foreach ($mangas as $index => $mangaData) {
+                foreach ($mangas as $mangaData) {
                     Manga::create([
                         'mal_id' => $mangaData['mal_id'] ?? null,
                         'title' => $mangaData['title'] ?? 'Unknown Title',

@@ -130,7 +130,6 @@
                             document.getElementById('image_url').value = manga.images.webp.image_url;
                             document.getElementById('url').value = manga.url;
                             
-                            // Scroll down
                             document.getElementById('mangaFormCard').scrollIntoView({ behavior: 'smooth' });
                         });
                         resultsContainer.appendChild(item);
@@ -141,7 +140,6 @@
                 });
         });
         
-        // Also fire search on Enter key
         document.getElementById('searchInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
