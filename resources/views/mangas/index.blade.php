@@ -14,7 +14,7 @@
                 <div class="text-muted fw-bold">The Tracker</div>
                 <p class="text-muted mt-2">Tracking {{ $allMangasCount ?? 0 }} total entries.</p>
             </div>
-            <a href="{{ route('mangas.create') }}" class="btn btn-primary">Add New Manga</a>
+            <a href="{{ route('mangas.create') }}" class="btn btn-primary">Add New</a>
         </div>
 
         @if(session('success'))
