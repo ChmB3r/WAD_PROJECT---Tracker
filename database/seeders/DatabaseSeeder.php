@@ -22,14 +22,12 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Fetching top mangas from Jikan API...');
         
         try {
-            // Fetch top 25 mangas from Jikan (skipping SSL verify for local Windows environments)
             $response = Http::withoutVerifying()->timeout(15)->get('https://api.jikan.moe/v4/top/manga');
             
             if ($response->successful()) {
                 $mangas = $response->json()['data'];
                 $statuses = ['Plan to read', 'Reading', 'On-hold', 'Completed', 'Dropped'];
                 
-                // Let's seed up to 25 items
                 foreach ($mangas as $index => $mangaData) {
                     Manga::create([
                         'mal_id' => $mangaData['mal_id'] ?? null,
@@ -48,7 +46,6 @@ class DatabaseSeeder extends Seeder
             
         } catch (\Exception $e) {
             $this->command->error('Error connecting to Jikan API: ' . $e->getMessage() . '. Falling back to dummy factory.');
-            // Fallback in case of rate limit or timeout
             Manga::factory(20)->create();
         }
     }
