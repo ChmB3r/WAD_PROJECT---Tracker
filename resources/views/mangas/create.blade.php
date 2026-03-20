@@ -99,7 +99,6 @@
             resultsContainer.innerHTML = '<div class="text-center p-3"><div class="spinner-border text-primary" role="status"></div><p class="mt-2 text-muted">Querying MyAnimeList via Jikan API...</p></div>';
             document.getElementById('mangaFormCard').classList.add('d-none');
 
-            // Hit the v4 Jikan API for manga
             fetch(`https://api.jikan.moe/v4/manga?q=${encodeURIComponent(query)}&limit=10`)
                 .then(res => res.json())
                 .then(data => {
@@ -118,7 +117,6 @@
                                 <small class="text-muted"><span class="badge bg-secondary">${manga.type}</span> - Score: ${manga.score || 'N/A'}</small>
                             </div>
                         `;
-                        // Auto-fill hidden form inputs
                         item.addEventListener('click', () => {
                             document.getElementById('mangaFormCard').classList.remove('d-none');
                             

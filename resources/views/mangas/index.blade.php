@@ -10,7 +10,7 @@
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <div>
-                <h1 class="mb-0 fw-bold">Monarch’s Archive</h1>
+                <h1 class="mb-0 fw-bold">Readers Archive</h1>
                 <div class="text-muted fw-bold">The Tracker</div>
                 <p class="text-muted mt-2">Tracking {{ $allMangasCount ?? 0 }} total entries.</p>
             </div>
