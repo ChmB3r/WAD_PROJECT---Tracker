@@ -1,59 +1,41 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# The Tracker (Readers Archive)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
+Readers Archive is a Reading List management system built to track and catalog your Manhwa/Manhua/Manga/Novel reading progress. It allows you to perform full CRUD (Create, Read, Update, Delete) operations on your collection.
+> [!NOTE]
+> I used api.jikan.moe to get data from MyAnimeList.
+## Database Fields
+The primary database table (`mangas`) utilizes the following fields:
+- **`id`**: Primary Key (Auto-incrementing integer)
+- **`mal_id`**: MyAnimeList ID (Integer, nullable)
+- **`title`**: Title of the manga (String, required)
+- **`type`**: Type of the release (String, nullable)
+- **`status`**: Reading status (Enum: 'Plan to read', 'Reading', 'On-hold', 'Completed', 'Dropped' - Default: 'Plan to read')
+- **`image_url`**: URL to the manga's cover image (String, nullable)
+- **`url`**: URL to the manga's webpage (String, nullable)
+- **`created_at`**: Timestamp of record creation
+- **`updated_at`**: Timestamp of the last record update
 
-## About Laravel
+## Screenshots
+### Dashboard
+<img width="1894" height="914" alt="image" src="https://github.com/user-attachments/assets/2200f094-c2ab-491f-861b-cabbb23931d2" />
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Working CRUD Operations
+- Add
+  #### Search any Manhwa/Manhua/Manga/Novel that exist in MyAnimeList. Upon search, it should pop-up the searched title.   
+  <img width="1905" height="905" alt="{0ED26534-4740-42DB-B95B-231EEBF7226C}" src="https://github.com/user-attachments/assets/56580867-865a-45bb-bdca-d68242d76486" />
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+  #### After clicking the searched Manhwa/Manhua/Manga/Novel, you can now add it to the List.
+  <img width="1883" height="908" alt="{7F1244C8-0C82-47D1-9704-FFFE93E9E592}" src="https://github.com/user-attachments/assets/c5df3dd6-6424-4c00-871f-9901eeb86c0a" />
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Edit
+  ### Edit the existing Manhwa/Manhua/Manga/Novel in the List.
+  <img width="1906" height="917" alt="{4346CF4D-0F65-4DAE-A24F-B5C4CD02948D}" src="https://github.com/user-attachments/assets/6925b27e-8a5b-41fd-a9e0-cfa92a7093dd" />
 
-## Learning Laravel
+- Delete
+  ### Remove the existing Manhwa/Manhua/Manga/Novel in the List.
+  <img width="1889" height="950" alt="image" src="https://github.com/user-attachments/assets/7a00c44c-3121-4ee3-82fb-45a5b40c62c4" />
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   
